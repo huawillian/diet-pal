@@ -3,6 +3,7 @@ let app = express();
 let mongo = require('./server/db.js');
 let util = require('./server/util.js');
 let routes = require('./server/routes.js');
+let path = require('path');
 
 // Convert req.body to json
 let bodyParser = require('body-parser')
@@ -14,9 +15,7 @@ let morgan = require('morgan');
 morgan('tiny');
 
 // Serve the client
-app.get('/', function (req, res) {
-
-});
+app.use(express.static(path.join(__dirname, 'client')));
 
 // Get all entries
 app.get('/entries', routes.getEntries);
