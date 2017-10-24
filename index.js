@@ -30,8 +30,8 @@ app.delete('/entries', routes.deleteEntry);
 // Update entry, given date, food and weight
 app.put('/entries', routes.updateEntry);
 
-app.listen(3000);
-console.log("listening on port 3000");
+app.listen( process.env.PORT || 3000);
+console.log("listening on port",  process.env.PORT || 3000);
 
 
 
