@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.landing {
+  height: 95vh;
+  width: 100%;  
+}
+
+.landingBackground {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  background-image: url('http://www.powerpointhintergrund.com/uploads/food-background-2.jpg');
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.6) blur(2px);
+}
+
+.landingContent {
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  background-color: white;
+  width: 80%;
+  padding: 10%;
+}
+
+label {
+  text-align: left;
+}
+
+.listItem {
+  background-color: white;
+  color: black;
+}
+
+.listItem h4 {
+  margin-left: 20px;
+}
+
+.trackBtn {
+  width: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+md-toast {
+  position: fixed;
+}
