@@ -10,50 +10,22 @@
   <script src="/node_modules/angular-aria/angular-aria.js"></script> 
   <script src="/node_modules/angular-animate/angular-animate.js"></script> 
   <script src="/node_modules/angular-material/angular-material.js"></script> 
-
+  <script src="/node_modules/angular-route/angular-route.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js" type="text/javascript"></script>
 
   <script src="scripts/app.js" type="text/javascript"></script>
+  <script src="scripts/toast.js" type="text/javascript"></script>
+  <script src="scripts/entries.js" type="text/javascript"></script>
+  <script src="scripts/util.js" type="text/javascript"></script>
+  <script src="scripts/mainController.js" type="text/javascript"></script>
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div ng-app="dietPalApp" ng-controller="mainController">
+    <div ng-app="dietPalApp" ng-controller="controller">
       <div class="landingBackground"></div>
-
-      <div class="landing">
-        <table class="landingContent">
-          <tr>
-            <td> 
-              <h1> Diet Pal </h1>
-              <h3> What should I track for you today? </h3>
-              <md-input-container>
-                <label>Weight or Food (e.g. 140.5 or Apple)</label>
-                <input ng-model="entryValue">
-                <md-button class="md-raised trackBtn" ng-click="addEntry()">Track It</md-button>
-              </md-input-container>
-           </td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="content">
-        <h2 style="color:black"> Weight </h2>
-        <canvas id="myChart"></canvas>
-      </div>
-
-      <div class="content" style="background-color: rgb(240,240,240)">
-        <md-list flex>
-          <md-subheader class="md-no-sticky"><h2> Recent Activity </h2></md-subheader>
-          <md-list-item class="md-3-line listItem" ng-repeat="entry in data | reverse" ng-click="null" >
-            <h4 style="width: 60px"> {{entry.date.split("-").slice(1).join("/")}} </h4>
-            <h4 style="width: 60px"> {{entry.weight ? entry.weight + "lb" : "N/A"}} </h4>
-            <h4> {{entry.food.length > 0 ? entry.food.join(", " ) : "No food logged"}} </h4>
-            <md-divider ></md-divider>
-          </md-list-item>
-        </md-list>
-      </div>
+      <div ng-view></div>
     </div>      
 </body>
 </html>

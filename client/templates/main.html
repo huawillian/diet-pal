@@ -1,0 +1,40 @@
+<div class="landing">
+  <form action="/logout" method="post">
+    <div>
+        <input type="submit" value="Log Out"/>
+    </div>
+  </form>
+  <a href="/#!/login"> Log In </a>
+  <a href="/#!/signup"> Create Account </a>
+
+  <table class="landingContent">
+    <tr>
+      <td> 
+        <h1> Diet Pal </h1>
+        <h3> What should I track for you today? </h3>
+        <md-input-container>
+          <label>Weight or Food (e.g. 140.5 or Apple)</label>
+          <input ng-model="entryValue">
+          <md-button class="md-raised trackBtn" ng-click="addEntry()">Track It</md-button>
+        </md-input-container>
+     </td>
+    </tr>
+  </table>
+</div>
+
+<div class="content">
+  <h2 style="color:black"> Weight </h2>
+  <canvas id="myChart"></canvas>
+</div>
+
+<div class="content" style="background-color: rgb(240,240,240)">
+  <md-list flex>
+    <md-subheader class="md-no-sticky"><h2> Recent Activity </h2></md-subheader>
+    <md-list-item class="md-3-line listItem" ng-repeat="entry in data | reverse" ng-click="null" >
+      <h4 style="width: 60px"> {{entry.date.split("-").slice(1).join("/")}} </h4>
+      <h4 style="width: 60px"> {{entry.weight ? entry.weight + "lb" : "N/A"}} </h4>
+      <h4> {{entry.food.length > 0 ? entry.food.join(", " ) : "No food logged"}} </h4>
+      <md-divider ></md-divider>
+    </md-list-item>
+  </md-list>
+</div>
