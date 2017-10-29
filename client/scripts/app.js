@@ -22,6 +22,6 @@ app.config(function($mdThemingProvider, $routeProvider) {
 });
 
 // Controller for app
-app.controller('controller', function($scope, $http, entriesApi, toastApi) {
-
+app.controller('controller', function($scope, $http, entriesApi, toastApi, userApi) {
+  //userApi.getUser().then(result => console.log(result));
 });

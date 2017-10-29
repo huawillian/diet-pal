@@ -35,12 +35,10 @@ app.use(express.static(path.join(__dirname, '.')));
 
 // Serialize and Deserialize User for passport values
 passport.serializeUser(function(user, done) {
-  console.log('serializing', user);
   done(null, user._id);
 });
 
 passport.deserializeUser(function(id, done) {
-  console.log('deserializing', id);
   mongo.getDB().collection('users').findOne({ _id: ObjectId(id) })
     .then(user => done(null, user));
 });
@@ -67,7 +65,7 @@ app.post('/login',
 // Handle log out request
 app.post('/logout', function(req, res){
   req.logout();
-  res.redirect('/#!/login');
+  res.redirect('/');
 });
 
 // Handle sign up request
@@ -99,6 +97,12 @@ app.get('/user', function(req, res) {
   }
   res.send(data);
 });
+
+app.get('/isAuth', function(req, res) {
+  let data = !!req.user ? true : false;
+  res.send(data);
+});
+
 
 // Get all entries
 app.get('/entries', routes.getEntries);

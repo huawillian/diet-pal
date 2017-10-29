@@ -1,12 +1,8 @@
 // Controller for app
-angular.module('dietPalApp').controller('mainController', function($scope, $http, entriesApi, toastApi) {
-
-  $http.get("/user")
-  .then(response => response.data)
-  .then(result => console.log('user', result));
-
+angular.module('dietPalApp').controller('mainController', function($scope, $http, entriesApi, toastApi, userApi) {
   $scope.entryValue = "";
   $scope.data = {};
+  $scope.user = null;
 
   let element = angular.element(document.getElementById("myChart"));
 
@@ -43,6 +39,6 @@ angular.module('dietPalApp').controller('mainController', function($scope, $http
   };
 
   $scope.fetchData();
-
   $scope.showSimpleToast = toastApi.showSimpleToast;
+  userApi.getUser().then(result => $scope.user = result);
 });

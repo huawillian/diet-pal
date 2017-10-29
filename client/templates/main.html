@@ -1,11 +1,16 @@
 <div class="landing">
-  <form action="/logout" method="post">
-    <div>
-        <input type="submit" value="Log Out"/>
-    </div>
-  </form>
-  <a href="/#!/login"> Log In </a>
-  <a href="/#!/signup"> Create Account </a>
+
+  <div ng-if="user">
+    <form action="/logout" method="post">
+      <div>
+          <input type="submit" value="Log Out"/>
+      </div>
+    </form>
+  </div>
+
+
+  <a ng-if="!user" href="/#!/login"> Log In </a>
+  <a ng-if="!user" href="/#!/signup"> Create Account </a>
 
   <table class="landingContent">
     <tr>
