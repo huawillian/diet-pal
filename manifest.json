@@ -1,0 +1,13 @@
+{
+  "name": "Diet Pal",
+  "short_name": "DietPal",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#80CBC4",
+  "description": "Minimalistic way to track your diet!",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }],
+}
