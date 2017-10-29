@@ -3,7 +3,7 @@ var app = angular.module('dietPalApp', ['ngMaterial', 'ngRoute']);
 // Theme app
 app.config(function($mdThemingProvider, $routeProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('light-green')
+    .primaryPalette('blue-grey')
     .dark(); 
   $routeProvider
     .when("/", {
@@ -23,5 +23,11 @@ app.config(function($mdThemingProvider, $routeProvider) {
 
 // Controller for app
 app.controller('controller', function($scope, $http, entriesApi, toastApi, userApi) {
-  //userApi.getUser().then(result => console.log(result));
+  userApi.getUser().then(result => {
+    if(!!result) {
+      return toastApi.showSimpleToast("Welcome, " + result.username + "! Enter something for me to track!");
+    } else {
+      return toastApi.showSimpleToast("Create an account to track your own diet!");
+    }
+  });
 });

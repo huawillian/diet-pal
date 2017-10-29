@@ -1,17 +1,40 @@
-<div>
-  <form action="/signup" method="post">
-    <h1> Create Account </h1>
-    <div>
-        <label>Username:</label>
-        <input type="text" name="username"/>
-    </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Create"/>
-    </div>
-  </form>
-  <a href="/"> Sign in as Guest </a>
+<div class="landing">
+  <table class="landingContent">
+    <tr>
+      <td> 
+        <div style="width:80%; max-width: 300px; margin: auto">
+          <form action="/signup" method="post">
+            <h1> Create Account </h1>
+
+            <md-input-container style="width: 80%; margin-top: 0px">
+                <md-icon style="font-size: 40px;width: 40px;height: 40px;margin-top: -10px;margin-left: -10px;"class="material-icons">account_box</md-icon>
+                <label>Username</label>
+                <input type="text" name="username"/>
+            </md-input-container>
+
+            <br>
+
+            <md-input-container style="width: 80%; margin-top: 0px">
+                <md-icon style="font-size: 40px;width: 40px;height: 40px;margin-top: -10px;margin-left: -10px;"class="material-icons">lock</md-icon>
+                <label>Password</label>
+                <input type="password" name="password"/>
+            </md-input-container>
+            <br>
+
+            <div style="width: 100%; margin-top: 0px">
+                <md-button type="submit" class="md-raised trackBtn"> Create Account </md-button>
+            </div>
+
+            <div style="width: 100%; margin-top: 20px">
+                 <a href="/">
+                <md-button type="submit" class="md-raised trackBtn md-warn" aria-label="Continue as Guest">
+                    Continue as Guest 
+                </md-button>
+                </a> 
+            </div>
+          </form>
+        </div>
+     </td>
+    </tr>
+  </table>
 </div>

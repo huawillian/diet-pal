@@ -1,7 +1,8 @@
-// 'mongodb://huawillian:huawillian@ds231205.mlab.com:31205/dietpaldb'
+// mongodb://huawillian:huawillian@ds231205.mlab.com:31205/dietpaldb
 // mongodb://localhost:27017/dietPalDB
+
 let MongoClient = require('mongodb').MongoClient;
-let url = 'mongodb://localhost:27017/dietPalDB';
+let url = 'mongodb://huawillian:huawillian@ds231205.mlab.com:31205/dietpaldb';
 let _db = null;
 
 MongoClient.connect(url, function(err, db) {

@@ -1,17 +1,35 @@
-<div class="landing">
+<md-toolbar style="position:fixed" class="md-hue-2">
+  <div class="md-toolbar-tools">
 
-  <div ng-if="user">
-    <form action="/logout" method="post">
-      <div>
-          <input type="submit" value="Log Out"/>
-      </div>
-    </form>
+    <img class="logo-image" style="height: 75%;margin-right: 20px" src="icon.png">
+
+    <h2 flex md-truncate style="font-size:1.5em"> {{!!user ? user.username : "DietPal" }}</h2>
+
+    <a href="/#!/login">
+      <md-button ng-if="!user" class="md-raised" aria-label="Log In">
+         Log In 
+      </md-button>
+    </a>
+
+    <a href="/#!/signup">
+      <md-button ng-if="!user" class="md-raised md-warn" aria-label="Sign Up">
+         Sign Up 
+      </md-button>
+    </a>
+    <div ng-if="user">
+      <form action="/logout" method="post">
+        <div>
+          <md-button ng-if="user" type="submit" class="md-raised md-warn" aria-label="Log Out">
+            Log Out
+          </md-button>
+        </div>
+      </form>
+    </div>
+  
   </div>
+</md-toolbar>
 
-
-  <a ng-if="!user" href="/#!/login"> Log In </a>
-  <a ng-if="!user" href="/#!/signup"> Create Account </a>
-
+<div class="landing">
   <table class="landingContent">
     <tr>
       <td> 

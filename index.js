@@ -77,7 +77,7 @@ app.post('/signup', function(req, res){
 
   mongo.getDB().collection('users').findOne({ username: username })
   .then(user => {
-    if (user !== null)  return res.send('Username already taken!');
+    if (user !== null) return res.send('Username already taken!');
      mongo.getDB().collection('users').insertOne({
           username: username,
           password: password
