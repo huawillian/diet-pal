@@ -1,7 +1,7 @@
 {
   "name": "Diet Pal",
   "short_name": "DietPal",
-  "start_url": "https://radiant-savannah-99515.herokuapp.com",
+  "start_url": "https://radiant-savannah-99515.herokuapp.com/",
   "display": "standalone",
   "background_color": "#80CBC4",
   "description": "Minimalistic way to track your diet!",
