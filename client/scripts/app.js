@@ -24,6 +24,7 @@ app.config(function($mdThemingProvider, $routeProvider) {
 // Controller for app
 app.controller('controller', function($scope, $http, entriesApi, toastApi, userApi) {
   userApi.getUser().then(result => {
+    console.log(result);
     if(!!result) {
       return toastApi.showSimpleToast("Welcome, " + result.username + "! Enter something for me to track!");
     } else {
