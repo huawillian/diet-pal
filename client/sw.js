@@ -1,9 +1,7 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   '/',
-  'manifest.json',
-  'https://radiant-savannah-99515.herokuapp.com/',
-  'https://radiant-savannah-99515.herokuapp.com/manifest.json'
+  '/client/'
 ];
 
 self.addEventListener('install', function(event) {
